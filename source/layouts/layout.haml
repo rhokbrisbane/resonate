@@ -20,6 +20,6 @@
   %body
     %header.header{ role: "banner", style: "background-image: url(\"/assets/images/heros/#{ data.page.hero_image }\")" }= partial "layouts/header"
     %article{:role => "main"}= yield
-    %footer= partial "layouts/footer"
+    %footer{ :role => "main" }= partial "layouts/footer"
 
     = javascript_include_tag 'application'

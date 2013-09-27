@@ -1,8 +1,12 @@
 header[role="banner"] {
   @extend %white_primary;
   min-height: $header-height;
-  padding: $line-height * 2 $gutter * 2;
   position: relative;
+
+  & > .container { 
+    padding-top: $line-height * 2; 
+    padding-bottom: $line-height * 5; 
+  }
 
   .one-half.last {
     border-left-width: 1px;
@@ -10,9 +14,6 @@ header[role="banner"] {
     @extend %white_border;
     vertical-align: bottom;
     margin-bottom: $line-height / 3;
-  }
-  .hero-text {
-    margin-bottom: $line-height * 3;
   }
   .subtitle {
     font-family: $sans-stack;

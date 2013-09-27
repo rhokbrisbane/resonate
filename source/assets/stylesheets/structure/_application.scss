@@ -5,5 +5,8 @@
 }
 
 section {
-  padding: $line-height * 2 0;
+  padding: $line-height * 2 0 $line-height * 2.5;
+
+  &.second { @extend %off-white_background; }
 }
+

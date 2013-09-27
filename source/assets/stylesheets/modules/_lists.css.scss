@@ -1,11 +1,11 @@
 // -- Lists -- //
 
-ol, ul, dir, menu {
+ol, ul, dir {
   font-size: inherit;
   padding: 0;
   margin-bottom: $line-height;
   list-style: none;
-  li {
+  li { 
     display: block;
     padding-left: $line-height;
     position: relative;
@@ -21,51 +21,79 @@ ol, ul, dir, menu {
   ul li:before { content: "-" }
 }
 
-.with_icon {
-  padding-left: $line-height * 1.5;
-  position: relative;
+menu {
+  margin-bottom: $line-height;
+  list-style: none;
+}
 
-  &:before {
-    display: block;
-    position: absolute;
-    left: 0; top: 0;
-    text-align: center;
-    font-weight: 400;
+.ruled-list {
+  margin-top: - $line-height / 3;
+  
+  & > li {
+    border-top-width: 1px;
+    border-top-style: solid;
+    @extend %mid-grey_border;
+    padding: $line-height / 3 0;
+    position: relative;
+    &:before {
+      display: none;
+    }
+    &:first-child {
+      border-top: none;
+    }
+  }
+
+  ul {
+    margin-bottom: 0;
+  }
+
+  label {
     line-height: $line-height;
-    width: $line-height;
-    top: 0.1em;
   }
 }
 
-.icon_list {
-  li { @extend .with_icon; }
-  li:before { top: $line-height / 2.5; }
-  li:first-child:before { top: 0; }
+.icon-list {
+  @extend .ruled_list;
+  & > li {
+    padding-left: $gutter * 1.333;
+    &:before {
+      display: block;
+      position: absolute;
+      left: 0; top: $line-height * 0.55;
+      text-align: center;
+      font-weight: 400;
+      font-size: 0.75em;
+      line-height: $line-height * 1.2;
+      width: $line-height * 1.2 !important;
+      @include border-radius(50%);
+      @extend %white_dark-grey;
+    }
+  }
 }
 
-ol.icon_list li:before {
-  font-family: $sans-stack;
+ol.icon-list li:before { 
+  font-family: $sans-stack; 
 };
 
 ul {
   list-style: none;
   li:before { content: "•"; }
-  &.no_dot li {
+  &.no-dot li {
     padding-left: 0;
     &:before { content: ""; }
   }
-}
+} 
 
 ol {
   list-style: decimal;
   counter-reset: item;
   li:before {
-    content: counter(item);
+    content: counter(item); 
     counter-increment: item;
   }
 }
 
-dir {
+dir { 
   list-style: none;
   li:before {
     content: "»";
@@ -78,22 +106,9 @@ dl {
     font-weight: 700;
     font-size: 0.8em;
     text-transform: uppercase;
+    border-bottom: 1px solid whitesmoke;
   }
   dd {
     margin-bottom: $line-height / 2;
-  }
-}
-
-.meta ul {
-  @extend .no_dot;
-
-  &.with_icon:before {
-    font-size: 1.333em;
-  }
-
-  li {
-    border-top-width: 1px;
-    border-top-style: solid;
-    @extend %black_transparent_light-grey;
   }
 }
