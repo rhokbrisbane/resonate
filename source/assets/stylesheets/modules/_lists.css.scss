@@ -53,7 +53,7 @@ menu {
 }
 
 .icon-list {
-  @extend .ruled_list;
+  @extend .ruled-list;
   & > li {
     padding-left: $gutter * 1.333;
     &:before {
