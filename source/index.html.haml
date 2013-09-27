@@ -1,5 +1,14 @@
 ---
-title: My page title
+title: 'RHOK - Brisbane 2013'
+subtitle: 'Random hacks of kindness, hacking for humanity.'
+hero: 'index.jpg'
 ---
 
-%h1.title= data.page.title
+%section.first
+  = partial 'intro_sections/welcome'
+
+%section.second  
+  = partial 'intro_sections/exposition'
+
+%section.last
+  = partial 'intro_sections/the_event'

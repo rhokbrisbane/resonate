@@ -1,0 +1,9 @@
+.container {
+  margin: auto;
+  padding: 0 $gutter;
+  max-width: $app-max-width;
+}
+
+section {
+  padding: $line-height * 2 0;
+}

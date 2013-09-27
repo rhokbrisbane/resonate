@@ -1,0 +1,159 @@
+// -- Grid -- //
+
+// Widths
+
+@mixin col-span( $span, $total ) {
+
+  @include box-sizing( border-box );
+  display: inline-block;
+  vertical-align: top;
+  width: 100% / $total * $span;
+  margin-right: -0.25em;
+  padding: 0 $gutter / 2;
+
+}
+
+@for $i from 1 through 24 {
+  .span-#{$i} {
+    @include col-span( $i, 24 );
+  }
+}
+
+// Halves
+
+.one-half {
+  @extend .span-12;
+  &:nth-child(odd) { 
+    padding-left: 0; 
+    padding-right: $gutter / 2;
+  }
+  &:nth-child(even) { 
+    padding-right: 0; 
+    padding-left: $gutter / 2;
+  }
+
+  &.number-0, &.number-2 { padding-left: 0 }
+  &.number-1, &.number-3 { padding-right: 0 }
+  
+  &.first {
+    padding-left: 0;
+    padding-right: $gutter / 2;
+  }
+
+  &.last {
+    padding-right: 0;
+    padding-left: $gutter / 2;
+  }
+}
+
+// Thirds
+
+.one-third {
+  @extend .span-8;
+  padding: 0 $gutter / 3;
+  &:last-child { padding: 0 $gutter / 3; }
+  &:nth-child(3n+3) { 
+    padding-right: 0;
+    padding-left: $gutter * 0.667;
+  }
+  &:nth-child(3n+1) { 
+    padding-left: 0;
+    padding-right: $gutter * 0.667;
+  }
+  &.first { padding-left: 0 }
+  &.last { 
+    padding-right: 0;
+    padding-left: $gutter / 3;
+  }
+  &.second { padding: 0 $gutter * 0.667; }
+}
+
+// Quarters
+.one-quarter {
+  @extend .span-6;
+  
+  &:nth-child(4n+1) { 
+    padding-left: 0;
+    padding-right: $gutter * 0.75;
+  }
+  &:nth-child(4n+4) { 
+    padding-right: 0;
+    padding-left: $gutter * 0.75;
+  }
+  &:nth-child(4n+2) { padding: 0 $gutter * 0.50 0 $gutter * 0.25; }
+  &:nth-child(4n+3) { padding: 0 $gutter * 0.25 0 $gutter * 0.50; }
+
+  &.first { 
+    padding-left: 0; 
+    padding-right: $gutter * 0.75 
+  }
+
+  &.last { 
+    padding-right: 0; 
+    padding-left: $gutter * 0.75 
+  }
+}
+
+.three-quarters {
+  @extend .span-18;
+
+  &.first { 
+    padding-left: 0; 
+    padding-right: $gutter * 0.75 
+  }
+
+  &.last { 
+    padding-right: 0; 
+    padding-left: $gutter * 0.75 
+  }
+}
+
+// Responsive
+
+@media screen and (max-width: $breakpoint-medium) {
+  .one-third, .one-quarter {
+    &:not(.no-break) {
+      width: 50%;
+      padding-left: $gutter / 2;
+      padding-right: $gutter / 2;
+      &:nth-child(odd) { padding-left: 0 }
+      &:nth-child(even) { padding-right: 0 }
+    }
+  }
+
+  .three-quarters, .three-quarters + .one-quarter,
+  .two-thirds, .two-thirds + .one-third {
+    &:not(.no-break) {
+      width: 100%;
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+  
+  .one-half .one-quarter, .one-half .three-quarters {
+    &:not(.no-break) {
+      padding-left: $gutter / 2;
+      padding-right: $gutter / 2;
+   
+      &.first { padding-left: 0; }
+      &.last { padding-right: 0; }
+    }
+  }
+  
+  .one-half .one-quarter { width: 25%; }
+  .one-half .three-quarters { width: 75%; }
+}
+
+@media screen and (max-width: $breakpoint-small) {
+  .one-half, .one-third, .two-thirds, .one-quarter, .three-quarters {
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .one-half .one-quarter {
+    width: 25%;
+  }
+  .one-half .three-quarters {
+    width: 75%;
+  }
+}

@@ -1,0 +1,16 @@
+.container.hero-text
+  .one-half.first
+    %h1.title
+      = data.page.title
+
+  .one-half.last
+    %p.subtitle
+      = data.page.subtitle
+
+%nav.nav-menu
+  .container
+    = link_to "Home", "/"
+    = link_to "Current Projects", "/problems"
+    = link_to "Contact Us", "#contactUs"
+
+

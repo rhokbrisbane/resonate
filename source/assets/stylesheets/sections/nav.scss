@@ -1,0 +1,23 @@
+nav {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  @extend %dark-grey_background;
+  a {
+    font-family: $sans-stack;
+    @extend %white;
+    padding: $line-height $line-height / 2;
+    display: inline-block;
+    &:first-child {
+      padding-left: 0;
+    }
+
+    &:hover {
+      @extend %primary;
+    }
+    &:visited {
+      @extend %off-white;
+    }
+  }
+}

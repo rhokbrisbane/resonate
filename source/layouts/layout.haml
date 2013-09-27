@@ -11,14 +11,15 @@
     %meta{ "http-equiv" => "X-UA-Compatible", :content => "IE=edge,chrome=1" }
     %meta{ :name => "viewport", :content => "width=device-width, initial-scale=1.0" }
 
-    %title= data.page.title
+    %title
+      = "#{ data.page.title }"
+
     = favicon_tag 'favicon.ico'
-    = stylesheet_link_tag 'styles'
+    = stylesheet_link_tag 'application'
 
   %body
-    .container
-      %header= partial "layouts/header"
-      %section#main{:role => "main"}= yield
-      %footer= partial "layouts/footer"
+    %header.header{ role: "banner", style: "background-image: url(\"/assets/images/heros/#{ data.page.hero_image }\")" }= partial "layouts/header"
+    %article{:role => "main"}= yield
+    %footer= partial "layouts/footer"
 
     = javascript_include_tag 'application'

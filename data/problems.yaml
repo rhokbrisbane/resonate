@@ -1,0 +1,19 @@
+- title: "RHoK Melbourne website"
+  summary: "Rebuilding this website! This is a new website that is currently under construction. We'd like to dedication some time to creating a really engaging and user-friendly RHoK Melbourne Website so that people can learn about all the great work that the RHoK volunteers are doing."
+  slug: "website"
+
+- title: "Automated Bushfire Survival Plan Application"
+  summary: "An online application that allows residents in high bushfire risk areas to easily prepare a bushfire survival plan by answering a set of questions relevant to their area. The application will then allow residents to print out their plan, alert them to take the action that they have already pre-determined based on Fire Danger Ratings and automatically notify others when they evacuate."
+  slug: "bushfire_survival_plan"
+
+- title: "Universal Emergency Response Management"
+  summary: "In any emergency response, such as firefighting, there is a need to manage resources and optimise their utilisation. Responders, vehicles, aircraft all play a part, and it is important for team leaders and managers to know where everyting is located and the task it is currently assigned to do. Often, in a fire fighting scenario, teams are spread out over many kilometres, and also be obscured by smoke. Operational managers in the response management headquarters also require a 'big picture' view to properly use the resources at their disposal."
+  slug: "universal_emergency_response_management"
+
+- title: "Resilience"
+  summary: "After a bush fire, flood, or cyclone, emergency response management personnel need to know what issues need to be resolved, get accurate and timely descriptions of their severity and location, to be able to prioritise them, to determine which types of resources are needed for their resolution, and to track their resolution. Currently, issues are handled by verbal description, relayed in the first instance over the phone from a member of the public, to a centralised response call centre, and then to the local emergency response crews. At each step, and with each relay of information, the precise location and an accurate description may be diluted or lost. Indeed, an accurate location and description may not have been captured in the first place. For example, a tree is across the road, a road section is washed away, a fence is breached and stock is wandering."
+  slug: "resilience"
+
+- title: "Real Time Info for Bushfire Planning"
+  summary: "Being able to go to one website and find real time information about road and weather conditions as well as any bushfire activity in the area allows residents to make informed decisions about whether to stay and defend or leave."
+  slug: "real_time_info_for_bushfire_planning"

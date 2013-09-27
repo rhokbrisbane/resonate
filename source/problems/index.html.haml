@@ -1,0 +1,13 @@
+---
+title: 'RHOK - Brisbane 2013'
+subtitle: 'Random hacks of kindness, hacking for humanity.'
+hero: 'problems.jpg'
+---
+
+%section#problems-list
+  .container
+    - data.problems.each do |problem|
+      .one-third.problem-index-item
+        %h3.three-line-header= problem.title
+        %p.problem-summary= problem.summary
+        = link_to 'Read more', "problems/#{problem.slug}"
