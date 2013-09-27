@@ -2,7 +2,7 @@
 
 $font-size: 16px;
 $line-height: 1.7em;
-$sans-stack: 'Helvetica', 'Arial', 'Verdana', sans-serif;
+$sans-stack: 'Helvetica', 'Verdana', 'Arial', sans-serif;
 $serif-stack: 'Lora', 'Droid Serif', 'Georgia', 'Times New Roman', serif;
 $mono-stack: 'Menlo', monospace;
 $cursive-stack: 'Pacifico', 'Great Vibes', cursive;
@@ -24,8 +24,7 @@ $padding: $size;
 $radius: 2px;
 $radius-subtle: $radius / 2;
 
-$home-header-height: 32em;
-$header-height: 12em;
+$header-height: $line-height * 4;
 
 // Repsonsive
 
