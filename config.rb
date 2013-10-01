@@ -70,6 +70,7 @@ configure :build do
 
   # Use relative URLs
   activate :relative_assets
+  set :relative_links, true
 
   # Generate index from page, eg. smile.html >> smile/index.html
   activate :directory_indexes

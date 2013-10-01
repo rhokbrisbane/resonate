@@ -1,11 +1,13 @@
+
 header[role="banner"] {
+  @extend .clearfix;
   @extend %white_primary;
   min-height: $header-height;
   position: relative;
 
-  & > .container { 
-    padding-top: $line-height * 2; 
-    padding-bottom: $line-height * 5; 
+  & > .container {
+    padding-top: $line-height * 2;
+    padding-bottom: $line-height * 5;
   }
 
   .one-half.last {
@@ -15,8 +17,17 @@ header[role="banner"] {
     vertical-align: bottom;
     margin-bottom: $line-height / 3;
   }
+
   .subtitle {
     font-family: $sans-stack;
     font-size: 1.5em;
+  }
+
+  @media screen and (max-width: $breakpoint-small) {
+    .one-half.last {
+      border: 0;
+      padding: 0;
+      margin-top: $line-height;
+    }
   }
 }

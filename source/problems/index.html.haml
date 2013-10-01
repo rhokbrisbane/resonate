@@ -6,8 +6,21 @@ hero: 'problems.jpg'
 
 %section#problems-list
   .container
-    - data.problems.each do |problem|
-      .one-third.problem-index-item
-        %h3.three-line-header= problem.title
-        %p.problem-summary= problem.summary
-        = link_to 'Read more', "/rhok_brisbane_2013/problems/#{problem.slug}"
+    - if data.problems
+
+      - data.problems.each do |problem|
+        .one-third.problem-index-item
+          %h3.three-line-header= problem.title
+          %p.problem-summary= problem.summary
+          = link_to 'Read more', "/problems/#{problem.slug}"
+
+    - else
+      %em{style: "font-size: 2em;"} Coming soon
+
+      %br
+      %br
+      %br
+      %br
+      %br
+      %br
+      %br
