@@ -12,7 +12,7 @@ hero: 'problems.jpg'
         .one-third.problem-index-item
           %h3.three-line-header= problem.title
           %p.problem-summary= problem.summary
-          = link_to 'Read more', "/problems/#{problem.slug}"
+          = link_to 'Read more', "http://net-engine.github.io/rhok_brisbane_2013/problems/#{problem.slug}"
 
     - else
       %em{style: "font-size: 2em;"} Coming soon

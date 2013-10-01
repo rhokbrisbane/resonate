@@ -44,9 +44,15 @@ Bundler.require
 # activate :automatic_image_sizes
 
 # Methods defined in the helpers block are available in templates
+
 # helpers do
-#   def some_helper
-#     "Helping"
+#   def menu_link(title, url)
+#     unless page_classes[/(\S+\s+){#{1}}/].blank?
+#       klass = (link == page_classes[/(\S+\s+){#{1}}/].strip ? 'active' : nil)
+#     end
+
+#     base = "http://net-engine.github.io/rhok_brisbane_2013/"
+#     link_to title "/#{url}")
 #   end
 # end
 
@@ -70,7 +76,6 @@ configure :build do
 
   # Use relative URLs
   activate :relative_assets
-  set :relative_links, true
 
   # Generate index from page, eg. smile.html >> smile/index.html
   activate :directory_indexes
