@@ -12,6 +12,9 @@ test/tmp
 test/version_tmp
 tmp
 
+build
+build/*
+
 # YARD artifacts
 .yardoc
 _yardoc
