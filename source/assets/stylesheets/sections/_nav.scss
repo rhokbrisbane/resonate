@@ -1,24 +1,22 @@
 nav {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  white-space: nowrap;
-  @extend %dark-grey_background;
 
   a {
-    font-family: $sans-stack;
     @extend %white;
-    padding: $line-height $line-height / 2;
     display: inline-block;
+    font-size: 1.15em;
+    font-family: $sans-stack;
+    padding: ($line-height / 2) 0;
+    margin-right: 1em;
 
-    &:first-child { padding-left: 0; }
-
-    &:hover { @extend %primary; }
+    &:hover, &.active { @extend %primary; }
     &:visited { @extend %off-white; }
   }
 
   @media screen and (max-width: $breakpoint-small) {
-    a { padding: $line-height $line-height / 3; }
+    a {
+      display: block;
+      padding: 0 0 .5em;
+      margin: 0;
+    }
   }
 }

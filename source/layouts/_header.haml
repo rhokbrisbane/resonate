@@ -1,7 +1,6 @@
 .container.hero-text
   .one-half.first
-    %h1.title
-      = data.page.title
+    = link_to image_tag('logo.png'), "/", class: 'logo'
 
   .one-half.last
     %p.subtitle
@@ -9,7 +8,8 @@
 
 %nav.nav-menu
   .container
-    = link_to "Home", "http://net-engine.github.io/rhok_brisbane_2013/"
-    = link_to "Current Projects", "http://net-engine.github.io/rhok_brisbane_2013/problems"
+    = link_to 'Home', '/', class: page_classes == 'index' ? 'active' : nil
+    = menu_link "Current projects", "problems"
+    = menu_link "Get involved", "volunteer"
     = link_to "Contact Us", "#contactUs"
 

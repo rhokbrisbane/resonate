@@ -10,3 +10,12 @@ section {
   &.second { @extend %off-white_background; }
 }
 
+
+img {
+  display: inline-block;
+  max-width: 100%;
+}
+
+article[role="main"] {
+  min-height: 20em;
+}

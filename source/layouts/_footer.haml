@@ -1,6 +1,12 @@
 %section#contactUs
   .container
-    %ul.ruled-list.one-half.first
-      %li= link_to "Meetup", "http://meetup.com"
-      %li= link_to "Twitter", "http://twitter.com"
-      %li= link_to "Facebook", "http://facebook.com"
+    .one-half.first
+      %ul.ruled-list
+        %li= link_to "Twitter", "https://twitter.com/rhokbrisbane"
+        %li= link_to "Get in touch", "mailto:ruth@netengine.com.au"
+
+      = link_to image_tag("http://a.tiles.mapbox.com/v3/netengine.map-7y6bubzy/153.03759813308716,-27.45199916377213,16/400x400.png", style: 'margin-bottom: 2em; max-width: 300px;'), "http://a.tiles.mapbox.com/v3/netengine.map-7y6bubzy.html#16/-27.4520/153.0376", target: "_blank"
+
+    .one-half.last
+      <a class="twitter-timeline" href="https://twitter.com/RhokBrisbane" data-widget-id="385252292598829056" data-chrome="noheader transparent noborders">Tweets by @RhokBrisbane</a>
+      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>

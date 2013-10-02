@@ -1,13 +1,15 @@
 
-header[role="banner"] {
+.header {
   @extend .clearfix;
-  @extend %white_primary;
-  min-height: $header-height;
+  @extend %white_black;
+  background-image: url(../images/hero-bg.jpg);
+  background-position: center;
+  @include background-size(cover);
   position: relative;
 
-  & > .container {
+  .hero-text {
     padding-top: $line-height * 2;
-    padding-bottom: $line-height * 5;
+    padding-bottom: $line-height * 2;
   }
 
   .one-half.last {
@@ -29,5 +31,13 @@ header[role="banner"] {
       padding: 0;
       margin-top: $line-height;
     }
+  }
+}
+
+
+.logo {
+  img {
+    display: block;
+    max-width: 100%;
   }
 }

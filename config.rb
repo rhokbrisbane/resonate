@@ -45,16 +45,15 @@ Bundler.require
 
 # Methods defined in the helpers block are available in templates
 
-# helpers do
-#   def menu_link(title, url)
-#     unless page_classes[/(\S+\s+){#{1}}/].blank?
-#       klass = (link == page_classes[/(\S+\s+){#{1}}/].strip ? 'active' : nil)
-#     end
+helpers do
+  def menu_link(name, link)
+    unless page_classes[/(\S+\s+){#{1}}/].blank?
+      klass = (link == page_classes[/(\S+\s+){#{1}}/].strip ? 'active' : nil)
+    end
+    link_to name, "/#{link}", class: klass
+  end
+end
 
-#     base = "http://net-engine.github.io/rhok_brisbane_2013/"
-#     link_to title "/#{url}")
-#   end
-# end
 
 set :css_dir,     "assets/stylesheets"
 set :js_dir,      "assets/javascripts"
