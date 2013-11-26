@@ -99,6 +99,8 @@ a {
   text-decoration: none;
   @include transition(all .2s linear);
   font-family: $sans-stack;
+  font-weight: 700;
+
   @extend %primary;
   &:hover {
     @extend %tertiary;
