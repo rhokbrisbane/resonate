@@ -24,6 +24,13 @@ article[role="main"] {
 
 strong.date {
   display: block;
+  font-size: 2em;
+  margin: .5em 0 -1em;
+  line-height: 1.35em;
+}
+
+
+article strong.date {
   font-size: 2.5em;
   margin: 1em 0;
 }
