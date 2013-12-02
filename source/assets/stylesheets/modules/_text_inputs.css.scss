@@ -7,8 +7,6 @@ input[type='text'], input[type="search"], input[type='tel'], input[type='email']
   line-height: $line-height - $line-height / 4;
   background: transparent;
   outline: 0;
-  box-sizing: border-box;
-  box-shadow: none;
   font-family: $sans-stack;
   font-size: $font-size;
   font-weight: 300;
@@ -16,6 +14,7 @@ input[type='text'], input[type="search"], input[type='tel'], input[type='email']
   margin-top: 0;
   margin-bottom: $line-height;
   border-style: solid;
+  @include box-shadow(none);
   @include box-sizing(border-box);
   @include border-radius($radius);
   @include transition( border-color 0.5s);
@@ -34,7 +33,7 @@ input[type='text'], input[type="search"], input[type='tel'], input[type='email']
 }
 
 :-moz-placeholder {
-  font-weight: 300; 
+  font-weight: 300;
   font-family: $sans-stack;
 }
 
@@ -43,13 +42,13 @@ input[type='text'], input[type="search"], input[type='tel'], input[type='email']
   font-family: $sans-stack;
 }
 
-:-ms-input-placeholder {  
+:-ms-input-placeholder {
   font-weight: 300;
   font-family: $sans-stack;
 }
 
 input[type="search"]::-webkit-search-cancel-button {
   -webkit-appearance: none;
-} 
+}
 
 

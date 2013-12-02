@@ -56,7 +56,7 @@ article strong.date {
   border: .5em solid $off-white;
   border-bottom-width: 0;
   padding: 1em 2em;
-  box-sizing: border-box;
+  @include box-sizing(border-box);
 
   &:hover { background: #aaa; }
 
