@@ -50,10 +50,11 @@ article strong.date {
 
 .sponsor-link {
   display: inline-block;
-  max-width: 245px;
+  max-width: 50%;
   background: white;
   margin-right: -.25em;
   border: .5em solid $off-white;
+  border-bottom-width: 0;
   padding: 1em 2em;
   box-sizing: border-box;
 
@@ -68,5 +69,6 @@ article strong.date {
     display: block;
     max-width: 1000px;
     padding: 0 1.5em;
+    border-bottom-width: .5em;
   }
 }
