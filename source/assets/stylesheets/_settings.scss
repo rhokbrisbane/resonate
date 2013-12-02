@@ -29,7 +29,7 @@ $header-height: $line-height * 4;
 // Repsonsive
 
 $breakpoint-mobile: 690px;
-$breakpoint-small: 768px;
+$breakpoint-small: $breakpoint-mobile;
 $breakpoint-medium: 900px;
 $breakpoint-large: 1400px;
 

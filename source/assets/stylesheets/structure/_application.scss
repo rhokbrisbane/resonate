@@ -7,7 +7,7 @@
 section {
   padding: $line-height * 2 0 $line-height * 2.5;
 
-  &.second { @extend %off-white_background; }
+  &.second, &.sponsors { @extend %off-white_background; }
 }
 
 
@@ -39,4 +39,34 @@ article strong.date {
 .address {
   font-size: 1.5em;
   line-height: 1.5em;
+}
+
+
+
+.sponsor-links {
+  @extend .clearfix;
+  margin: 0 -.5em;
+}
+
+.sponsor-link {
+  display: inline-block;
+  max-width: 245px;
+  background: white;
+  margin-right: -.25em;
+  border: .5em solid $off-white;
+  padding: 1em 2em;
+  box-sizing: border-box;
+
+  &:hover { background: #aaa; }
+
+  img {
+    display: block;
+    margin: auto;
+  }
+
+  @media screen and (max-width: $breakpoint-small) {
+    display: block;
+    max-width: 1000px;
+    padding: 0 1.5em;
+  }
 }

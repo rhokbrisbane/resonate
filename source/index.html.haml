@@ -5,10 +5,14 @@ hero: 'index.jpg'
 ---
 
 %section.first
-  = partial 'intro_sections/welcome'
+  .container= partial 'sections/exposition'
 
-%section.second  
-  = partial 'intro_sections/exposition'
+%section.second#problem
+  .container
+    = partial 'sections/problem'
 
 %section.last
-  = partial 'intro_sections/the_event'
+  .container= partial 'sections/the_event'
+
+%section.sponsors
+  .container= partial 'sections/sponsors'

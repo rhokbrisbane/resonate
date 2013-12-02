@@ -146,7 +146,7 @@
 
 @media screen and (max-width: $breakpoint-small) {
   .one-half, .one-third, .two-thirds, .one-quarter, .three-quarters {
-    width: 100%;
+    width: 100% !important;
     padding-left: 0 !important;
     padding-right: 0 !important;
   }
