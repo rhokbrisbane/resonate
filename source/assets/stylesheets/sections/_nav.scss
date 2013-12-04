@@ -14,9 +14,27 @@ nav {
 
   @media screen and (max-width: $breakpoint-small) {
     a {
-      display: block;
-      padding: 0 0 .5em;
-      margin: 0;
+      padding: 0 0 1em;
     }
+  }
+}
+
+
+.button.join-button {
+  float: right;
+  background: $primary;
+  color: white;
+  font-size: 2em;
+  margin: 0 2.5em 1em 1em;
+
+  &:hover {
+    background: darken($primary, 20%);
+  }
+
+  @media screen and (max-width: $breakpoint-small) {
+    display: block;
+    float: none;
+    margin: 0.25em auto 1em;
+    max-width: 9em;
   }
 }

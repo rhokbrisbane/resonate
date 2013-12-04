@@ -6,6 +6,7 @@
   background-position: center;
   @include background-size(cover);
   position: relative;
+  text-align: center;
 
   .hero-text {
     padding-top: $line-height * 2;
