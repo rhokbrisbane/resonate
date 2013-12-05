@@ -51,6 +51,7 @@ article strong.date {
 .sponsor-link {
   display: inline-block;
   max-width: 50%;
+  min-width: 50%;
   background: white;
   margin-right: -.25em;
   border: .5em solid $off-white;
@@ -63,6 +64,7 @@ article strong.date {
   img {
     display: block;
     margin: auto;
+    max-height: 14em;
   }
 
   @media screen and (max-width: $breakpoint-small) {
