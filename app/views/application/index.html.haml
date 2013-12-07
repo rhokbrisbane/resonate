@@ -1,0 +1,7 @@
+%p Application#index
+- if signed_in?
+  Your email is:
+  = current_user.email
+- else
+  You are not signed in
+

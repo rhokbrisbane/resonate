@@ -1,0 +1,19 @@
+postgres:       &postgres
+  adapter:      postgresql
+  encoding:     unicode
+  host:         localhost
+  min_messages: warning
+  username:     netengine
+  password:     <%= ENV['PASSWORD'] %>
+
+development:
+  <<: *postgres
+  database:     rhok_brisbane_2013_dev
+
+test:
+  <<: *postgres
+  database:     rhok_brisbane_2013_test
+
+production:
+  <<: *postgres
+  database:     rhok_brisbane_2013_production
