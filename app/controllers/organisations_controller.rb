@@ -1,10 +1,9 @@
 class OrganisationsController < ApplicationController
   before_action :set_organisation, only: [:show, :edit, :update, :destroy]
 
-  # GET /organisations
-  # GET /organisations.json
+  # search with /organisations?q[name]=asdf
   def index
-    @organisations = Organisation.all
+    @organisations = Organisation.paginate(page: params[:page])
   end
 
   # GET /organisations/1

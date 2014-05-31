@@ -1,5 +1,6 @@
 <div class="container">
   <h1>Organisations</h1>
+  <%= link_to 'New Organisation', new_organisation_path, class: "icon-plus" %>
 
   <ul class="organisations-list">
     <% @organisations.each do |organisation| %>
@@ -9,11 +10,11 @@
         </label>
         <p>city: <%= organisation.city %></p>
         <p>category: <%= organisation.category %></p>
-
-
       </li>
     <% end %>
   </ul>
 
-  <%= link_to 'New Organisation', new_organisation_path, class: "icon-plus" %>
+  <%= will_paginate @organisation, :style => 'color:blue' %>
+  <%= page_entries_info @organisation %>
+
 </div>
