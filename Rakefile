@@ -3,4 +3,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-RhokBrisbane2013::Application.load_tasks
+Resonate::Application.load_tasks

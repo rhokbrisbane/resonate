@@ -1,0 +1,13 @@
+.container
+  %h2 Resend confirmation instructions
+
+  %div.one-half.first
+    = form_for(resource, :as => resource_name, :url => confirmation_path(resource_name), :html => { :method => :post }) do |f|
+      = devise_error_messages!
+      %div
+        = f.label :email
+        = f.email_field :email, :autofocus => true
+      %footer= f.submit "Resend confirmation instructions"
+
+  %div.one-half.last
+    = render "devise/shared/links"

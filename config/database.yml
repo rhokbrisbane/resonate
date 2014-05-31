@@ -3,17 +3,12 @@ postgres:       &postgres
   encoding:     unicode
   host:         localhost
   min_messages: warning
-  username:     netengine
-  password:     <%= ENV['PASSWORD'] %>
+  username: Rowan
 
 development:
   <<: *postgres
-  database:     rhok_brisbane_2014_dev
+  database:     resonate_dev
 
 test:
   <<: *postgres
-  database:     rhok_brisbane_2014_test
-
-production:
-  <<: *postgres
-  database:     rhok_brisbane_2014_production
+  database:     resonate_test

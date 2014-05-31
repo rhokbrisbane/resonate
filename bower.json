@@ -1,0 +1,6 @@
+{
+  "name": "Resonate Dependencies",
+  "dependencies": {
+    "terrain": "*"
+  }
+}
