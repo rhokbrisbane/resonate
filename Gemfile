@@ -3,6 +3,9 @@ source 'https://rubygems.org'
 gem 'devise'
 gem 'haml'
 gem 'pg'
+gem 'pg_search'
+gem 'paperclip'
+
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.2'

@@ -11,10 +11,40 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131207051701) do
+ActiveRecord::Schema.define(version: 20140531043359) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "organisations", force: true do |t|
+    t.string   "name"
+    t.string   "description"
+    t.text     "cover_photo"
+    t.string   "email"
+    t.string   "phone"
+    t.string   "address"
+    t.string   "city"
+    t.string   "state"
+    t.string   "post_code"
+    t.string   "country"
+    t.string   "category"
+    t.text     "mission"
+    t.string   "slug"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "cover_photo_file_name"
+    t.string   "cover_photo_content_type"
+    t.integer  "cover_photo_file_size"
+    t.datetime "cover_photo_updated_at"
+  end
+
+  create_table "pg_search_documents", force: true do |t|
+    t.text     "content"
+    t.integer  "searchable_id"
+    t.string   "searchable_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
