@@ -4,16 +4,7 @@ class OrganisationsController < ApplicationController
   # GET /organisations
   # GET /organisations.json
   def index
-    page_number = session[:page_number]
-
-    if page_number == nil && params[:page] == nil
-      page_number = 1
-    else
-      page_number = params[:page].to_i
-    end
-
-    @organisations = Organisation.paginate(:page => page_number)
-    binding.pry
+    @organisations = Organisation.paginate(page: params[:page])
   end
 
   # GET /organisations/1
