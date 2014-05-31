@@ -38,6 +38,7 @@ class OrganisationsController < ApplicationController
 
     respond_to do |format|
       if @organisation.save
+        generate_short_url(@organisation)
         format.html { redirect_to @organisation, notice: 'Organisation was successfully created.' }
         format.json { render action: 'show', status: :created, location: @organisation }
       else
@@ -80,5 +81,17 @@ class OrganisationsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def organisation_params
       params.require(:organisation).permit(:name, :description, :cover_photo, :email, :phone, :address, :city, :state, :post_code, :country, :category, :mission, :slug)
+    end
+
+    def generate_short_url(organisation)
+      url_to_shorten = organisation_url(organisation)
+      url = Googl.shorten(url_to_shorten)
+        if url != nil
+          organisation.short_url = url.short_url
+          organisation.long_url = url.long_url
+          organisation.qr_code = url.qr_code
+          organisation.info = url.info
+          organisation.save
+        end 
     end
 end
