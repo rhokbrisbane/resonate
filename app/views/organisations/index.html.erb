@@ -2,17 +2,18 @@
   <h1>Organisations</h1>
   <%= link_to 'New Organisation', new_organisation_path, class: "icon-plus" %>
 
-  <ul class="organisations-list">
-    <% @organisations.each do |organisation| %>
-      <li>
-        <label>
-          <%= link_to organisation.name, organisation %>
-        </label>
-        <p>city: <%= organisation.city %></p>
-        <p>category: <%= organisation.category %></p>
-      </li>
-    <% end %>
-  </ul>
+  <table class="organisations-list">
+    <thead>
+      <th>Organisation</th>
+      <th>Location</th>
+      <th>Category</th>
+    </thead>
+    <tbody>
+      <% @organisations.each do |organisation| %>
+        <%= render partial: 'organisation', locals: { organisation: organisation } %>
+      <% end %>
+    </tbody>
+  </table>
 
   <%= will_paginate @organisation, :style => 'color:blue' %>
   <%= page_entries_info @organisation %>
