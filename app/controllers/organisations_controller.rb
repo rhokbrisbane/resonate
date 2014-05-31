@@ -1,10 +1,10 @@
 class OrganisationsController < ApplicationController
   before_action :set_organisation, only: [:show, :edit, :update, :destroy]
 
-  # GET /organisations
-  # GET /organisations.json
+  # search with /organisations?q[name]=asdf
   def index
-    @organisations = Organisation.paginate(page: params[:page])
+    @organisations = Organisation.all
+    @organisations = @organisations.where(params[:q]) if params[:q].present?
   end
 
   # GET /organisations/1
@@ -69,6 +69,6 @@ class OrganisationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def organisation_params
-      params.require(:organisation).permit(:name, :description, :cover_photo, :email, :phone, :address, :city, :state, :post_code, :country, :category, :mission, :slug, :page)
+      params.require(:organisation).permit(:name, :description, :cover_photo, :email, :phone, :address, :city, :state, :post_code, :country, :category, :mission, :slug)
     end
 end

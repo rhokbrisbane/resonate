@@ -27,8 +27,12 @@ GEM
       tzinfo (~> 0.3.37)
     arel (4.0.1)
     atomic (1.1.14)
+    awesome_print (1.2.0)
     bcrypt-ruby (3.1.2)
     builder (3.1.4)
+    byebug (2.7.0)
+      columnize (~> 0.3)
+      debugger-linecache (~> 1.2)
     climate_control (0.0.3)
       activesupport (>= 3.0)
     cocaine (0.5.4)
@@ -41,6 +45,9 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.6.3)
+    columnize (0.8.9)
+    daemons (1.1.9)
+    debugger-linecache (1.2.0)
     devise (3.2.2)
       bcrypt-ruby (~> 3.0)
       orm_adapter (~> 0.1)
@@ -48,6 +55,7 @@ GEM
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
     erubis (2.7.0)
+    eventmachine (1.0.3)
     execjs (1.4.0)
       multi_json (~> 1.0)
     haml (4.0.3)
@@ -84,6 +92,19 @@ GEM
       coderay (~> 1.0)
       method_source (~> 0.8)
       slop (~> 3.4)
+    pry-byebug (1.3.2)
+      byebug (~> 2.7)
+      pry (~> 0.9.12)
+    pry-meta (0.0.8)
+      awesome_print
+      pry
+      pry-byebug
+      pry-remote
+    pry-remote (0.1.8)
+      pry (~> 0.9)
+      slop (~> 3.0)
+    quiet_assets (1.0.2)
+      railties (>= 3.1, < 5.0)
     rack (1.5.2)
     rack-test (0.6.2)
       rack (>= 1.0)
@@ -121,6 +142,10 @@ GEM
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       sprockets (~> 2.8)
+    thin (1.6.2)
+      daemons (>= 1.0.9)
+      eventmachine (>= 1.0.0)
+      rack (>= 1.0.0)
     thor (0.18.1)
     thread_safe (0.1.3)
       atomic
@@ -134,7 +159,6 @@ GEM
       multi_json (~> 1.0, >= 1.0.2)
     warden (1.2.3)
       rack (>= 1.0)
-    will_paginate (3.0.5)
 
 PLATFORMS
   ruby
@@ -148,9 +172,10 @@ DEPENDENCIES
   paperclip
   pg
   pg_search
-  pry
+  pry-meta
+  quiet_assets
   rails (= 4.0.2)
   sass-rails (~> 4.0.0)
   sdoc
+  thin
   uglifier (>= 1.3.0)
-  will_paginate (~> 3.0)
