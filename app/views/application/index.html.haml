@@ -5,6 +5,4 @@
 - else
   You are not signed in
 
-= form_tag search_results_path, method: :get do
-  = label_tag :q, "Search:" 
-  = text_field_tag :q
+= render 'search_results/form'

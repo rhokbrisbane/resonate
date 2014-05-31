@@ -1,5 +1,7 @@
 %h1 Search Results
 
+= render 'search_results/form'
+
 %ul
   - @search_results.each do |search_result|
     -# replace with render search_result.searchable when you have _user
