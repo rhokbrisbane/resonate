@@ -1,0 +1,82 @@
+@mixin button() {
+  @include rounded-box(inline-block, false);
+  padding: $line-height / 5 $line-height / 2;
+  margin: 0;
+  height: auto;
+  line-height: $line-height;
+  font-family: $font-family-input;
+  font-weight: 600;
+  -webkit-font-smoothing: antialiased;
+  text-decoration: none;
+  color: $button-default-foreground-color;
+  background-color: $button-default-background-color;
+  border-color: $button-default-border-color;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  &.active {
+    background: darken($button-default-background-color, 20%);
+  }
+}
+
+a.button {
+  &:hover, &:active, &:visited { color: $button-default-foreground-color; }
+}
+
+.button, button,
+input[type="submit"],
+input[type="button"] {
+  @include button;
+}
+
+input[type="submit"],
+button[type='submit'],
+.button.submit {
+  background: $button-submit-background-color;
+
+  &:hover {
+    background-color: $button-submit-hover-background-color;
+  }
+}
+
+.outline-button, a.outline-button {
+  background-color: transparent;
+  color: $color-primary;
+  border: thin solid $color-primary;
+
+  &:hover, &:active, &:visited {
+    background-color: transparent;
+    color: $color-primary;
+  }
+}
+
+
+.buttons {
+  @extend .clearfix;
+  border: 0;
+
+  .button, button,
+  input[type="submit"], input[type="button"] {
+    float: left;
+    margin: 0;
+    border-radius: 0;
+    border-left: thin solid rgba(black, .25);
+
+    &:focus { outline: 0; }
+
+    &:first-child {
+      border-left-width: 0;
+      border-radius: $radius 0 0 $radius;
+    }
+
+    &.active {
+      background: darken($button-default-background-color, 20%);
+    }
+
+    &:last-child, &.last-child {
+      border-radius: 0 $radius $radius 0;
+    }
+  }
+}
+
+

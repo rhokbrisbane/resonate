@@ -1,0 +1,21 @@
+{
+  "name": "Terrain",
+  "version": "0.0.5",
+  "homepage": "https://github.com/net-engine/terrain",
+  "authors": [
+    "Rowan Hogan",
+    "Brad Parker"
+  ],
+  "description": "\"A collection of structural sass for your project.\"",
+  "license": "MIT",
+  "main": "terrain.scss",
+  "ignore": [
+    "docs",
+    ".gitignore",
+    "package.json",
+    "Gruntfile.js",
+    "README.md",
+    "node_modules",
+    "bower_components"
+  ]
+}

@@ -1,69 +1,44 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @organisation.name %>
-</p>
+<div class="hero overlayed-text" style="background-image: url(<%= @organisation.cover_photo %>)">
+  <div class="container">
 
-<p>
-  <strong>Description:</strong>
-  <%= @organisation.description %>
-</p>
+    <h1><%= @organisation.name %></h1>
 
-<p>
-  <strong>Cover photo:</strong>
-  <%= @organisation.cover_photo %>
-</p>
+    <%= link_to 'Edit', edit_organisation_path(@organisation) %>
 
-<p>
-  <strong>Email:</strong>
-  <%= @organisation.email %>
-</p>
+    <p class="description">
+      <%= @organisation.description %>
+    </p>
 
-<p>
-  <strong>Phone:</strong>
-  <%= @organisation.phone %>
-</p>
+    <label>Category: <%= @organisation.category %></label>
+  </div>
+</div>
 
-<p>
-  <strong>Address:</strong>
-  <%= @organisation.address %>
-</p>
+<div class="container">
 
-<p>
-  <strong>City:</strong>
-  <%= @organisation.city %>
-</p>
+  <h3>Mission</h3>
+  <p class="mission"><%= @organisation.mission.html_safe %></p>
 
-<p>
-  <strong>State:</strong>
-  <%= @organisation.state %>
-</p>
+  <h3>Details</h3>
+  <dl>
+    <dt>Email:</dt>
+    <dd><%= @organisation.email %></dd>
 
-<p>
-  <strong>Post code:</strong>
-  <%= @organisation.post_code %>
-</p>
+    <dt>Phone:</dt>
+    <dd><%= @organisation.phone %></dd>
 
-<p>
-  <strong>Country:</strong>
-  <%= @organisation.country %>
-</p>
+    <dt>Address:</dt>
+    <dd>
+      <%= @organisation.address %>
+      <%= @organisation.city %>
+      <%= @organisation.state %>
+      <%= @organisation.post_code %>
+      <%= @organisation.country %>
 
-<p>
-  <strong>Category:</strong>
-  <%= @organisation.category %>
-</p>
+      <%= link_to "Map", "http://maps.google.com/?q=#{@organisation.address}%20#{@organisation.city}%20#{@organisation.state}%20#{@organisation.post_code},%20#{@organisation.country}", target: "_blank" %>
+    </dd>
+  </dl>
 
-<p>
-  <strong>Mission:</strong>
-  <%= @organisation.mission %>
-</p>
+  <%= link_to 'Back', organisations_path %>
+</div>
 
-<p>
-  <strong>Slug:</strong>
-  <%= @organisation.slug %>
-</p>
-
-<%= link_to 'Edit', edit_organisation_path(@organisation) %> |
-<%= link_to 'Back', organisations_path %>

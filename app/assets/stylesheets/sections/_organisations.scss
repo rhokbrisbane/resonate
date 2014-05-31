@@ -1,0 +1,16 @@
+
+.organisations-list {
+  li {
+    padding: $line-height 0;
+    &:before { display: none; }
+  }
+}
+
+
+
+.description { font-style: italic; }
+
+.mission {
+  font-size: 1.25em;
+  line-height: $line-height;
+}

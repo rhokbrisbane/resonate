@@ -1,0 +1,48 @@
+.modal {
+  @include animatableHide;
+
+  &.open {
+    visibility: visible;
+    @extend .fixed-center;
+    z-index: 9999;
+
+    @media screen and (max-width: $breakpoint-small) {
+      transform: none;
+      left: $page-margin / 2;
+      right: $page-margin / 2;
+      top: $page-margin;
+      bottom: $page-margin / 2;
+    }
+  }
+
+  .modal-header {
+    h1, h2, h3, h4, h5, h6 { margin: 0; }
+
+    margin-bottom: $line-height;
+    padding-bottom: $line-height / 2;
+  }
+
+  .modal-content { padding: $line-height; }
+  .modal-footer { padding-top: $line-height; }
+}
+
+.modal-overlay {
+  @include animatableHide;
+  z-index: 9998;
+
+  background-color: $color-background-overlay;
+
+  &.open {
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    visibility: visible;
+  }
+}
+
+.modal-overlay {
+  transition: opacity 0.2s ease;
+  opacity: 0;
+}
+.modal-overlay.open { opacity: 1; }

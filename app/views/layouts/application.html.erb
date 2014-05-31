@@ -1,18 +1,46 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>RhokBrisbane2013</title>
+  <meta charset="utf-8">
+  <title>Resonate</title>
+
+  <meta name="description" content="Beginning with a conversation we seek to create partnerships between like minded people around the world making change. We believe that collaborating and co-creating between those who resonate on issues radically enhances social impact.">
+
+  <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+  <meta name="viewport" content="width = device-width">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+
+  <!-- <link rel="apple-touch-icon" href="/apple-touch-icon.png"> -->
+  <!-- <link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png"> -->
+  <!-- <link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png"> -->
+  <!-- <link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png"> -->
+
+  <meta property="og:title" content="Resonate">
+  <meta property="og:site_name" content="Resonate">
+  <meta property="og:description" content="Resonate provides networking within the NFP sector and aims to increase the flow of information, funds, volunteers and general effectiveness of the area.">
+  <meta property="og:image" content="https://pbs.twimg.com/profile_images/378800000804174587/22617ce8ebec003cf95a1b8e872464fa.png">
+
+  <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAMBQTFRF62Rp8IWJ+czN8ZGU611h+dDS/OXm8paZ7Glu856h74GE+97f7nd7++Hi7XJ262Fm//z8/fLy9rS39re57W5y+tXW/fDw/Ovr8IqO+tfZ732B/vv78YyQ+9rb73+D7nR47XB074OG////6lhd6ltg//7+8pue8IiL6lle8pmc9bK097/B9ayu8pib85yf7XR47nt/8Y6S/Ofn9a2w/vf3++Pk972//e3u+dLU+MfJ9bGz619j8YyP9KWn86Cj86GkE3cQ3wAAANpJREFUeNo0jwtPgzAUhW+p2FK78twGjDHXW157D6dOUff//5WA7ktucvIlNzkH9IDvLewgTIYI/VlMSDD8eHIuo9jwKnQoayJY/RS9sBRlTz2Td2KUrcErhXBxgDwqs9NwIdzgH7spHjTMudv9G+eKLxreOriLeYZnDTfZPdRRnueyDdB9/gAWS1z5SbJcHLBOSQnfKXPjSf9gl3iiFYWpoqJ5xRpNeyZU7EF/RmnQIgJs/XWmNn31Lan2sRTsK2zkejaM85bXwqdHyVXWjmtHCisMrELrXwEGAIjgG+91xm8RAAAAAElFTkSuQmCC">
+
   <%= stylesheet_link_tag    "application", media: "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <div class="flash">
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-  </div>
+  <%= render 'layouts/flash' %>
 
-  <%= yield %>
+  <header class="app-header">
+    <%= render 'layouts/header' %>
+  </header>
 
+  <main>
+    <%= yield %>
+  </main>
+
+  <footer class="app-footer">
+    <%= render 'layouts/footer' %>
+  </footer>
 </body>
 </html>

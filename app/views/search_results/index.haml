@@ -1,8 +1,17 @@
-%h1 Search Results
+.container
+  %h1 Search Results
 
-= render 'search_results/form'
+  = render 'search_results/form'
 
-%ul
-  - @search_results.each do |search_result|
-    -# replace with render search_result.searchable when you have _user
-    %li= render search_result.searchable
+  - if @search_results.any?
+    %table
+      %thead
+        %th Organisation
+        %th Location
+        %th Category
+      %tbody
+        - @search_results.each do |search_result|
+          -# replace with render search_result.searchable when you have _user
+          = render search_result.searchable
+  - else
+    %p No results found.

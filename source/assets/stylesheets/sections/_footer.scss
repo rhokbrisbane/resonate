@@ -1,9 +1,0 @@
-footer[role="main"] {
-  @extend %white_black;
-
-  .ruled-list > li {
-    @extend %dark-grey_border;
-  }
-
-  a:visited { @extend %off-white; }
-}
