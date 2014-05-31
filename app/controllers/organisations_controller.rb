@@ -33,11 +33,11 @@ class OrganisationsController < ApplicationController
   # POST /organisations
   # POST /organisations.json
   def create
-    @organisation = Organisation.new(organisation_params)
+    binding.pry
+    @organisation = Organisation.new(organisation_params.merge(root_url: root_url))
 
     respond_to do |format|
       if @organisation.save
-        setup_googl_attributes
         format.html { redirect_to @organisation, notice: 'Organisation was successfully created.' }
         format.json { render action: 'show', status: :created, location: @organisation }
       else
@@ -75,11 +75,6 @@ class OrganisationsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_organisation
       @organisation = Organisation.find(params[:id])
-    end
-
-    def setup_googl_attributes
-      url = organisations_url(@organisation)
-      @organisation.set_googl_attributes(url)
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

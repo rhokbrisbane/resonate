@@ -8,8 +8,13 @@ class Organisation < ActiveRecord::Base
     :default_url => "/images/:style/missing.png"
 
   validates_attachment_content_type :cover_photo, :content_type => /\Aimage\/.*\Z/
+  validate :slug, uniqueness: true, presence: true
 
   multisearchable against: %w(name description email phone address city state post_code country category mission slug)
+
+  before_create :set_googl_attributes
+
+  attr_accessor :root_url
 
   # geocoded_by :address
   # after_validation :geocode, if: :location_changed?
@@ -18,16 +23,17 @@ class Organisation < ActiveRecord::Base
     name
   end
 
-  def qr_code_image_url
-    to_use_url = self.short_url
-    return "http://chart.googleapis.com/chart?cht=qr&chs=150x150&choe=UTF-8&chld=H&chl=#{to_use_url}"
+  def qr_code_image_url(size = '150x150')
+    "http://chart.googleapis.com/chart?cht=qr&chs=#{size}&choe=UTF-8&chld=H&chl=#{short_url}"
   end
 
-  def set_googl_attributes(url_to_shorten)
-    url = Googl.shorten(url_to_shorten)
-    if url != nil
-      self.assign_attributes(short_url: url.short_url, long_url: url.long_url, info: url.info, qr_code: url.qr_code)
-      self.save
+  def set_googl_attributes
+    self.long_url = root_url + slug
+    googl = Googl.shorten(long_url)
+    if googl
+      self.short_url = googl.short_url
+      self.info = googl.info
+      self.qr_code = googl.qr_code
     end 
   end
 
