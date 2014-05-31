@@ -9,4 +9,7 @@ class Organisation < ActiveRecord::Base
 
   multisearchable against: %w(name description email phone address city state post_code country category mission slug)
 
+  def to_s
+    name
+  end
 end
