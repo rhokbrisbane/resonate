@@ -11,7 +11,32 @@ class Organisation < ActiveRecord::Base
 
   multisearchable against: %w(name description email phone address city state post_code country category mission slug)
 
+  after_validation :geocode, if: :location_changed?
+
+  geocoded_by :address
+
   def to_s
     name
+  end
+
+
+  def address
+    [street1, street2, suburb, state, country].compact.join(', ')
+  end
+
+  def coordinates
+    [latitude, longitude]
+  end
+
+  def coordinates?
+    coordinates.join.present?
+  end
+
+  def location_changed?
+    if persisted?
+      (changed & %w(street1 street2 suburb state country)).any?
+    else
+      !coordinates?
+    end
   end
 end
