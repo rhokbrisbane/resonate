@@ -1,10 +1,10 @@
 class OrganisationsController < ApplicationController
   before_action :set_organisation, only: [:show, :edit, :update, :destroy]
 
-  # GET /organisations
-  # GET /organisations.json
+  # search with /organisations?q[name]=asdf
   def index
     @organisations = Organisation.all
+    @organisations = @organisations.where(params[:q]) if params[:q].present?
   end
 
   # GET /organisations/1
