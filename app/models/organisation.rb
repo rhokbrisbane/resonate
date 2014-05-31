@@ -18,6 +18,11 @@ class Organisation < ActiveRecord::Base
     name
   end
 
+  def qr_code_image_url
+    to_use_url = self.short_url
+    return "http://chart.googleapis.com/chart?cht=qr&chs=150x150&choe=UTF-8&chld=H&chl=#{to_use_url}"
+  end
+
   # def address
   #   [address, city, state, country].compact.join(', ')
   # end

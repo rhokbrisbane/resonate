@@ -19,7 +19,6 @@ class OrganisationsController < ApplicationController
   # GET /organisations/1
   # GET /organisations/1.json
   def show
-    binding.pry
   end
 
   # GET /organisations/new
