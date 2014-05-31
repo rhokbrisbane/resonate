@@ -1,0 +1,14 @@
+postgres:       &postgres
+  adapter:      postgresql
+  encoding:     unicode
+  host:         localhost
+  min_messages: warning
+  username: matthewbarram
+
+development:
+  <<: *postgres
+  database:     resonate_dev
+
+test:
+  <<: *postgres
+  database:     resonate_test
