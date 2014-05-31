@@ -1,0 +1,18 @@
+
+<div class="container">
+  <div class="grid-container">
+    <div class="user one-half">
+      <% if signed_in? %>
+        <span>Your email is:</span>
+        <%= current_user.email %>
+        <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
+      <% else %>
+        <%= link_to "Login", new_user_session_path %>
+      <% end %>
+    </div>
+
+    <div class="social one-half">
+      <%= link_to 'Twitter', 'https://twitter.com/_rsn8', class: "icon-twitter" %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,14 @@
+
+.flash {
+  text-align: center;
+  padding: $line-height;
+  font-weight: 700;
+
+  &.notice {
+    background: $color-success-light;
+  }
+
+  &.alert {
+    background: $color-danger-light;
+  }
+}

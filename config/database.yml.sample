@@ -1,0 +1,19 @@
+postgres:       &postgres
+  adapter:      postgresql
+  encoding:     unicode
+  host:         localhost
+  min_messages: warning
+  username:     netengine
+  password:     <%= ENV['PASSWORD'] %>
+
+development:
+  <<: *postgres
+  database:     resonate_dev
+
+test:
+  <<: *postgres
+  database:     resonate_test
+
+production:
+  <<: *postgres
+  database:     resonate_production

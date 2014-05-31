@@ -1,51 +1,19 @@
-<h1>Listing organisations</h1>
+<div class="container">
+  <h1>Organisations</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Cover photo</th>
-      <th>Email</th>
-      <th>Phone</th>
-      <th>Address</th>
-      <th>City</th>
-      <th>State</th>
-      <th>Post code</th>
-      <th>Country</th>
-      <th>Category</th>
-      <th>Mission</th>
-      <th>Slug</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
+  <ul class="organisations-list">
     <% @organisations.each do |organisation| %>
-      <tr>
-        <td><%= organisation.name %></td>
-        <td><%= organisation.description %></td>
-        <td><%= organisation.cover_photo %></td>
-        <td><%= organisation.email %></td>
-        <td><%= organisation.phone %></td>
-        <td><%= organisation.address %></td>
-        <td><%= organisation.city %></td>
-        <td><%= organisation.state %></td>
-        <td><%= organisation.post_code %></td>
-        <td><%= organisation.country %></td>
-        <td><%= organisation.category %></td>
-        <td><%= organisation.mission %></td>
-        <td><%= organisation.slug %></td>
-        <td><%= link_to 'Show', organisation %></td>
-        <td><%= link_to 'Edit', edit_organisation_path(organisation) %></td>
-        <td><%= link_to 'Destroy', organisation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+      <li>
+        <label>
+          <%= link_to organisation.name, organisation %>
+        </label>
+        <p>city: <%= organisation.city %></p>
+        <p>category: <%= organisation.category %></p>
+
+
+      </li>
     <% end %>
-  </tbody>
-</table>
+  </ul>
 
-<br>
-
-<%= link_to 'New Organisation', new_organisation_path %>
+  <%= link_to 'New Organisation', new_organisation_path, class: "icon-plus" %>
+</div>
