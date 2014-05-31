@@ -1,0 +1,65 @@
+@font-face {
+  font-family: 'icomoon';
+  src: asset-url("icons/icomoon.eot");
+  src: asset-url("icons/icomoon.eot?#iefix") format('embedded-opentype'),
+       asset-url("icons/icomoon.svg#icomoon") format('svg'),
+       asset-url("icons/icomoon.woff") format('woff'),
+       asset-url("icons/icomoon.ttf") format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.icon-ux:before {
+  content: "\e600";
+}
+.icon-statistics:before {
+  content: "\e601";
+}
+.icon-search:before {
+  content: "\e602";
+}
+.icon-plus:before {
+  content: "\e603";
+}
+.icon-navicon:before {
+  content: "\e604";
+}
+.icon-minus:before {
+  content: "\e605";
+}
+.icon-ellipsis:before {
+  content: "\e606";
+}
+.icon-cross:before {
+  content: "\e607";
+}
+.icon-arrow-up:before {
+  content: "\e608";
+}
+.icon-arrow-right:before {
+  content: "\e609";
+}
+.icon-arrow-left:before {
+  content: "\e60a";
+}
+.icon-arrow-down:before {
+  content: "\e60b";
+}
+.icon-facebook:before {
+  content: "\e60c";
+}
+.icon-instagram:before {
+  content: "\e60d";
+}
+.icon-twitter:before {
+  content: "\e60e";
+}
+.icon-youtube:before {
+  content: "\e60f";
+}
+.icon-vimeo:before {
+  content: "\e610";
+}
+.icon-github:before {
+  content: "\e611";
+}

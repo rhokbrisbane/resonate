@@ -5,7 +5,7 @@ class OrganisationsController < ApplicationController
     @organisation = Organisation.find_by(slug: params[:slug])
 
     if @organisation
-      render text: 'whatever'
+      render @organisation
     else
       redirect_to root_path, notice: "#{params[:slug]} doesn't correspond to any organization"
     end

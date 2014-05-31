@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-RhokBrisbane2013::Application.config.secret_key_base = '1fe6acb8b5f27769cce9d759b6ea9ee92f96015140725a02b0dc4047cbb0db12a756366523c61ace3b1c3deb3432a74064b9cb172d9cd818ac0f2235def814c5'
+Resonate::Application.config.secret_key_base = '1fe6acb8b5f27769cce9d759b6ea9ee92f96015140725a02b0dc4047cbb0db12a756366523c61ace3b1c3deb3432a74064b9cb172d9cd818ac0f2235def814c5'

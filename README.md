@@ -1,3 +1,8 @@
-One-pager for the Brisbane chapter of RHOK 2013
+Resonate App
+-------------------------------------------
 
-[http://rhokbrisbane.org](http://rhokbrisbane.org)
+Kicked off during [RHoK Brisbane](http://rhokbrisbane.org) 2014 ([Meetup](http://www.meetup.com/Rhok-Brisbane/events/174434442/)).
+
+
+
+by [Resonate](http://resn8.org)
