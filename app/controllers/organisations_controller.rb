@@ -1,6 +1,16 @@
 class OrganisationsController < ApplicationController
   before_action :set_organisation, only: [:show, :edit, :update, :destroy]
 
+  def org
+    @organisation = Organisation.find_by(slug: params[:slug])
+
+    if @organisation
+      render @organisation
+    else
+      redirect_to root_path, notice: "#{params[:slug]} doesn't correspond to any organization"
+    end
+  end
+
   # search with /organisations?q[name]=asdf
   def index
     @organisations = Organisation.paginate(page: params[:page])

@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
-gem 'rails', '4.0.2'
+ruby '2.1.1'
+gem 'rails', '4.1.1'
 
 gem 'compass-rails', '~> 1.1.2'
 gem 'devise'
