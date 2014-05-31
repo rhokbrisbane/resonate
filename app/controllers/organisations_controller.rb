@@ -3,8 +3,11 @@ class OrganisationsController < ApplicationController
 
   # search with /organisations?q[name]=asdf
   def index
-    @organisations = Organisation.all
-    @organisations = @organisations.where(params[:q]) if params[:q].present?
+    if params[:q] == nil
+      params[:q] = 1
+    end
+
+    @organisations = Organisation.paginate(page: params[:page])
   end
 
   # GET /organisations/1
