@@ -23,6 +23,14 @@ class Organisation < ActiveRecord::Base
     return "http://chart.googleapis.com/chart?cht=qr&chs=150x150&choe=UTF-8&chld=H&chl=#{to_use_url}"
   end
 
+  def set_googl_attributes(url_to_shorten)
+    url = Googl.shorten(url_to_shorten)
+    if url != nil
+      self.assign_attributes(short_url: url.short_url, long_url: url.long_url, info: url.info, qr_code: url.qr_code)
+      self.save
+    end 
+  end
+
   # def address
   #   [address, city, state, country].compact.join(', ')
   # end
