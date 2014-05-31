@@ -8,12 +8,12 @@ postgres:       &postgres
 
 development:
   <<: *postgres
-  database:     rhok_brisbane_2013_dev
+  database:     rhok_brisbane_2014_dev
 
 test:
   <<: *postgres
-  database:     rhok_brisbane_2013_test
+  database:     rhok_brisbane_2014_test
 
 production:
   <<: *postgres
-  database:     rhok_brisbane_2013_production
+  database:     rhok_brisbane_2014_production
