@@ -9,10 +9,11 @@ class OrganisationsController < ApplicationController
     if page_number == nil && params[:page] == nil
       page_number = 1
     else
-      page_number = params[:page]
+      page_number = params[:page].to_i
     end
 
-    @organisations = Organisation.paginate(:page => session[:page_number])
+    @organisations = Organisation.paginate(:page => page_number)
+    binding.pry
   end
 
   # GET /organisations/1
