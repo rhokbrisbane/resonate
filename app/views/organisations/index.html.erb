@@ -45,7 +45,8 @@
     <% end %>
   </tbody>
 </table>
-
 <br>
+<%= will_paginate @organisation, :style => 'color:blue' %>
+<%= page_entries_info @organisation %>
 
 <%= link_to 'New Organisation', new_organisation_path %>

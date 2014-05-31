@@ -1,6 +1,8 @@
 class Organisation < ActiveRecord::Base
   include PgSearch
 
+  self.per_page = 1
+
   has_attached_file :cover_photo,
     :styles => { :medium => "300x300>", :thumb => "100x100>" },
     :default_url => "/images/:style/missing.png"

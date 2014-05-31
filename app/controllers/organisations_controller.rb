@@ -4,7 +4,15 @@ class OrganisationsController < ApplicationController
   # GET /organisations
   # GET /organisations.json
   def index
-    @organisations = Organisation.all
+    page_number = session[:page_number]
+
+    if page_number == nil && params[:page] == nil
+      page_number = 1
+    else
+      page_number = params[:page]
+    end
+
+    @organisations = Organisation.paginate(:page => session[:page_number])
   end
 
   # GET /organisations/1
@@ -69,6 +77,6 @@ class OrganisationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def organisation_params
-      params.require(:organisation).permit(:name, :description, :cover_photo, :email, :phone, :address, :city, :state, :post_code, :country, :category, :mission, :slug)
+      params.require(:organisation).permit(:name, :description, :cover_photo, :email, :phone, :address, :city, :state, :post_code, :country, :category, :mission, :slug, :page)
     end
 end

@@ -3,7 +3,7 @@ postgres:       &postgres
   encoding:     unicode
   host:         localhost
   min_messages: warning
-  username:     netengine
+  username:     matthewbarram
   password:     <%= ENV['PASSWORD'] %>
 
 development:
