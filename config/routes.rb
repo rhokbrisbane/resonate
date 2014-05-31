@@ -1,4 +1,6 @@
 RhokBrisbane2013::Application.routes.draw do
+  resources :organisations
+
   root :to => "application#index"
 
   devise_for :users
