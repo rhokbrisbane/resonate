@@ -1,0 +1,21 @@
+<div class="container">
+  <h1>Search Results</h1>
+
+  <%= render 'search_results/form' %>
+
+  <% if @search_results.any? %>
+    <table>
+      <thead></thead>
+        <th>Organisation</th>
+        <th>Location</th>
+        <th>Category</th>
+      <tbody>
+        <% @search_results.each do |search_result| %>
+          <%= render search_result.searchable %>
+        <% end %>
+      </tbody>
+    </table>
+  <% else %>
+    <p>No results found.</p>
+  <% end %>
+</div>

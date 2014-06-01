@@ -1,0 +1,12 @@
+<div class="container">
+  <%= link_to image_tag('logos/logo.png'), root_path, class: "logo" %>
+
+  <button class="nav-toggle">
+    <span>Menu</span>
+  </button>
+
+  <nav class="nav"></nav>
+    <%= link_to "Search", "/", class: "icon-search icon-only" %>
+    <%= link_to "Organisations", organisations_path %>
+  </nav>
+</div>
