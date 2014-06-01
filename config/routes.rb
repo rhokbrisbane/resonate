@@ -5,6 +5,6 @@ Resonate::Application.routes.draw do
   get '/org/:slug', to: 'organisations#org'
 
   root :to => "application#index"
-
-  devise_for :users
+  ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
 end

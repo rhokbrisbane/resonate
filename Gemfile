@@ -19,6 +19,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'unicorn'
 gem 'will_paginate', '~> 3.0'
 gem 'googl'
+gem 'activeadmin', github: 'gregbell/active_admin'
 
 group :development do
   gem 'better_errors'
