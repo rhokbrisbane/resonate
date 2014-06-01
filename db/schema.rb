@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140601012024) do
+ActiveRecord::Schema.define(version: 20140601020403) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -57,6 +57,7 @@ ActiveRecord::Schema.define(version: 20140601012024) do
     t.string   "long_url"
     t.string   "qr_code_url"
     t.string   "googl_analytics_url"
+    t.integer  "user_id"
   end
 
   create_table "pg_search_documents", force: true do |t|
