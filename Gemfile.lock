@@ -49,12 +49,11 @@ GEM
     arel (5.0.1.20140414130214)
     awesome_print (1.2.0)
     bcrypt (3.1.7)
-    better_errors (1.1.0)
-      coderay (>= 1.0.0)
-      erubis (>= 2.6.6)
     bourbon (3.2.3)
       sass (~> 3.2)
       thor
+    bowerify (1.0.0)
+      sprockets
     builder (3.2.2)
     bullet (4.9.0)
       activesupport
@@ -261,7 +260,7 @@ PLATFORMS
 
 DEPENDENCIES
   activeadmin!
-  better_errors
+  bowerify
   bullet
   compass-rails (~> 1.1.2)
   country_select
