@@ -3,6 +3,8 @@ Resonate App
 
 Kicked off during [RHoK Brisbane](http://rhokbrisbane.org) 2014 ([Meetup](http://www.meetup.com/Rhok-Brisbane/events/174434442/)).
 
+The action plan can be found [here](https://github.com/rhokbrisbane/resonate/blob/master/Resonate_Action_Plan.md)
+
 ### Development
 
 Needs more instructions...
