@@ -8,14 +8,33 @@ class Organisation < ActiveRecord::Base
     :default_url => "/images/:style/missing.png"
 
   validates_attachment_content_type :cover_photo, :content_type => /\Aimage\/.*\Z/
+  validate :slug, uniqueness: true, presence: true
 
   multisearchable against: %w(name description email phone address city state post_code country category mission slug)
 
   geocoded_by :full_address
   after_validation :geocode, if: :location_changed?
 
+  before_create :set_googl_urls
+
+  attr_accessor :root_url
+
   def to_s
     name
+  end
+
+  def qr_code_image_url(size = '150x150')
+    "http://chart.googleapis.com/chart?cht=qr&chs=#{size}&choe=UTF-8&chld=H&chl=#{short_url}"
+  end
+
+  def set_googl_urls
+    self.long_url = root_url + slug
+    googl = Googl.shorten(long_url)
+    if googl
+      self.short_url = googl.short_url
+      self.googl_analytics_url = googl.info
+      self.qr_code_url = googl.qr_code
+    end
   end
 
   def full_address
@@ -30,6 +49,8 @@ class Organisation < ActiveRecord::Base
     coordinates.join.present?
   end
 
+  private
+
   def location_changed?
     if persisted?
       (changed & %w(address city state post_code country)).any?
@@ -37,4 +58,5 @@ class Organisation < ActiveRecord::Base
       !coordinates?
     end
   end
+
 end

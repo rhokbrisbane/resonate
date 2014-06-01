@@ -6,6 +6,10 @@
 
 @import 'icons';
 
+@import 'leaflet/dist/leaflet';
+@import 'modules/leaflet-locate';
+@import 'leaflet-routing-machine';
+
 @import 'terrain/terrain';
 
 @import 'terrain/terrain/color/palette',

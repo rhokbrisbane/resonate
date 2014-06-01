@@ -1,7 +1,11 @@
 <div class="container">
   <h1>Organisations</h1>
   <%= link_to 'New Organisation', new_organisation_path, class: "icon-plus" %>
+</div>
 
+<div id="map" class="map"></div>
+
+<div class="container">
   <table class="organisations-list">
     <thead>
       <th>Organisation</th>
@@ -9,13 +13,10 @@
       <th>Category</th>
     </thead>
     <tbody>
-      <% @organisations.each do |organisation| %>
-        <%= render partial: 'organisation', locals: { organisation: organisation } %>
-      <% end %>
+      <%= render @organisations %>
     </tbody>
   </table>
 
   <%= will_paginate @organisation, :style => 'color:blue' %>
   <%= page_entries_info @organisation %>
-
 </div>

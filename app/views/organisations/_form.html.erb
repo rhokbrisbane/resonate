@@ -59,10 +59,14 @@
     <%= f.label :mission %><br>
     <%= f.text_area :mission %>
   </div>
-  <div class="field">
-    <%= f.label :slug %><br>
-    <%= f.text_field :slug %>
-  </div>
+
+  <% if @organisation.new_record? %>
+    <div class="field">
+      <%= f.label :slug, "Slug: (Please be aware you won't be able to edit this field)" %><br>
+      <%= f.text_field :slug %>
+    </div>
+  <% end %>
+
   <div class="actions">
     <%= f.submit %>
   </div>
