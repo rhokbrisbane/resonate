@@ -3,7 +3,7 @@
 
   <%= render 'search_results/form' %>
 
-  <% if @search_results.any? %>
+  <% if !@search_results.blank? %>
     <table>
       <thead></thead>
         <th>Organisation</th>

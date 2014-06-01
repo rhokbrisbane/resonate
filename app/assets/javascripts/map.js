@@ -1,20 +1,4 @@
 
-
-
-window.getCurrentLocation = function(cb) {
-  if (localStorage && localStorage.getItem('current_location')) {
-    return cb(localStorage.getItem('current_location').split(','));
-  } else {
-    return $.getJSON("https://freegeoip.net/json/?callback=?", function(data) {
-      var latlng;
-      latlng = [data.latitude, data.longitude];
-      localStorage.setItem('current_location', latlng);
-      return cb(latlng);
-    });
-  }
-}
-
-
 $(function() {
   window.map = L.map('map', {
     scrollWheelZoom: false
@@ -24,11 +8,6 @@ $(function() {
     follow: true,
     icon: 'icon-target'
   }).addTo(map);
-
-  getCurrentLocation(function(location) {
-    map.setView(location, 15);
-  });
-
 
   $.getJSON('/organisations.json', function(organisations) {
     window.markers = L.featureGroup();
