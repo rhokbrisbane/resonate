@@ -21,6 +21,7 @@ gem 'unicorn'
 gem 'googl'
 gem 'activeadmin', github: 'gregbell/active_admin' # better rails 4 support
 gem 'country_select'
+gem 'bowerify'
 
 group :development do
   gem 'better_errors'
