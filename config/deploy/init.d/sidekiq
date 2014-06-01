@@ -1,0 +1,47 @@
+#!/bin/sh
+set -e
+. /etc/environment
+# Example init script, this can be used with nginx, too,
+# since nginx and unicorn accept the same signals
+
+# Feel free to change any of the following variables for your app:
+
+
+USER="netengine"
+RBENV_ROOT="/home/$USER/.rbenv"
+
+APP_ROOT=/var/www/unicorn/current
+PATH="$APP_ROOT/bin:$RBENV_ROOT/shims:$RBENV_ROOT/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+BUNDLE=$APP_ROOT/bin/bundle
+CONTROLLER=/var/www/unicorn/shared/bundle/ruby/2.0.0/bin/sidekiqctl
+NAME=sidekiq
+SIDEKIQ="sidekiq"
+DESC="Sidekiq for NetEngine"
+PID=/var/www/unicorn/current/tmp/pids/sidekiq.pid
+INIT_CONF=/var/www/unicorn/shared/config/init.conf
+
+test -f "$INIT_CONF" && . $INIT_CONF
+
+CMD="(cd $APP_ROOT && nohup $BUNDLE exec $SIDEKIQ -e $RAILS_ENV -C $APP_ROOT/config/sidekiq.yml -P $PID >> $APP_ROOT/log/sidekiq.log 2>&1 &) && sleep 5"
+
+action="$1"
+set -u
+
+cd $APP_ROOT || exit 1
+
+case $action in
+start)
+        bash -c "$CMD"
+        ;;
+stop)
+        if [ -f $PID ]; then cd /var/www/unicorn/current && $BUNDLE exec sidekiqctl stop $PID 10 && sleep 10 ; fi
+        ;;
+restart)
+        if [ -f $PID ]; then cd /var/www/unicorn/current && $BUNDLE exec sidekiqctl stop $PID 10 && sleep 10 ; fi
+        bash -c "$CMD"
+        ;;
+*)
+        echo >&2 "Usage: $0 <start|stop|restart>"
+        exit 1
+        ;;
+esac
