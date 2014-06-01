@@ -22,6 +22,8 @@ gem 'googl'
 gem 'activeadmin', github: 'gregbell/active_admin' # better rails 4 support
 gem 'country_select'
 gem 'bowerify'
+gem 'capistrano', '~> 2.15.5'
+gem 'capistrano_colors'
 
 group :development do
   gem 'bullet'
