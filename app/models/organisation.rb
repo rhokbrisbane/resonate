@@ -1,7 +1,8 @@
 class Organisation < ActiveRecord::Base
   include PgSearch
 
-  self.per_page = 50
+  # self.per_page = 50
+  belongs_to :user, inverse_of: :organisation
 
   has_attached_file :cover_photo,
     :styles => { :medium => "300x300>", :thumb => "100x100>" },

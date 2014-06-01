@@ -1,4 +1,5 @@
 class OrganisationsController < ApplicationController
+  bafore_action :authenticate_user!, only: [:new, :create, :destroy, :edit]
   before_action :set_organisation, only: [:show, :edit, :update, :destroy]
 
   def org
@@ -13,7 +14,7 @@ class OrganisationsController < ApplicationController
 
   # search with /organisations?q[name]=asdf
   def index
-    @organisations = Organisation.paginate(page: params[:page])
+    @organisations = Organisation.all # .paginate(page: params[:page])
   end
 
   # GET /organisations/1
@@ -33,7 +34,10 @@ class OrganisationsController < ApplicationController
   # POST /organisations
   # POST /organisations.json
   def create
-    @organisation = Organisation.new(organisation_params.merge(root_url: root_url))
+    attributes = organisation_params
+    attributes[:root_url] = root_url
+    attributes[:user_id] = current_user.id
+    @organisation = Organisation.new(attributes)
 
     respond_to do |format|
       if @organisation.save

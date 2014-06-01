@@ -4,6 +4,8 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  has_one :organisation, inverse_of: :user
+
   def to_s
     email
   end
