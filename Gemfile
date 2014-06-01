@@ -20,6 +20,7 @@ gem 'unicorn'
 # gem 'will_paginate', '~> 3.0'
 gem 'googl'
 gem 'activeadmin', github: 'gregbell/active_admin' # better rails 4 support
+gem 'country_select'
 
 group :development do
   gem 'better_errors'
