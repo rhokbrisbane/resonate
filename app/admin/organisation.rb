@@ -1,4 +1,4 @@
-ActiveAdmin.register User do
+ActiveAdmin.register Organisation do
 
   
   # See permitted parameters documentation:
