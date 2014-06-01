@@ -12,4 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require leaflet/dist/leaflet
+//= require leaflet-locatecontrol/src/L.Control.Locate.js
+//= require leaflet-routing-machine
 //= require_tree .

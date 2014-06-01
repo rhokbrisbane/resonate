@@ -12,6 +12,9 @@ class Organisation < ActiveRecord::Base
 
   multisearchable against: %w(name description email phone address city state post_code country category mission slug)
 
+  geocoded_by :full_address
+  after_validation :geocode, if: :location_changed?
+
   before_create :set_googl_urls
 
   attr_accessor :root_url
@@ -31,29 +34,29 @@ class Organisation < ActiveRecord::Base
       self.short_url = googl.short_url
       self.googl_analytics_url = googl.info
       self.qr_code_url = googl.qr_code
-    end 
+    end
   end
 
-  # geocoded_by :address
-  # after_validation :geocode, if: :location_changed?
+  def full_address
+    [address, city, state, country].compact.join(', ')
+  end
 
-  # def address_1
-  #   [address, city, state, country].compact.join(', ')
-  # end
+  def coordinates
+    [latitude, longitude]
+  end
 
-  # def coordinates
-  #   [latitude, longitude]
-  # end
+  def coordinates?
+    coordinates.join.present?
+  end
 
-  # def coordinates?
-  #   coordinates.join.present?
-  # end
+  private
 
-  # def location_changed?
-  #   if persisted?
-  #     (changed & %w(address city state post_code country)).any?
-  #   else
-  #     !coordinates?
-  #   end
-  # end
+  def location_changed?
+    if persisted?
+      (changed & %w(address city state post_code country)).any?
+    else
+      !coordinates?
+    end
+  end
+
 end

@@ -1,7 +1,11 @@
 <div class="container">
   <h1>Organisations</h1>
   <%= link_to 'New Organisation', new_organisation_path, class: "icon-plus" %>
+</div>
 
+<div id="map" class="map"></div>
+
+<div class="container">
   <table class="organisations-list">
     <thead>
       <th>Organisation</th>
@@ -15,5 +19,4 @@
 
   <%= will_paginate @organisation, :style => 'color:blue' %>
   <%= page_entries_info @organisation %>
-
 </div>
