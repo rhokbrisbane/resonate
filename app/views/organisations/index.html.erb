@@ -9,9 +9,7 @@
       <th>Category</th>
     </thead>
     <tbody>
-      <% @organisations.each do |organisation| %>
-        <%= render partial: 'organisation', locals: { organisation: organisation } %>
-      <% end %>
+      <%= render @organisations %>
     </tbody>
   </table>
 

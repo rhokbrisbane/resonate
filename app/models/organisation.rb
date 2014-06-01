@@ -12,12 +12,9 @@ class Organisation < ActiveRecord::Base
 
   multisearchable against: %w(name description email phone address city state post_code country category mission slug)
 
-  before_create :set_googl_attributes
+  before_create :set_googl_urls
 
   attr_accessor :root_url
-
-  # geocoded_by :address
-  # after_validation :geocode, if: :location_changed?
 
   def to_s
     name
@@ -27,17 +24,20 @@ class Organisation < ActiveRecord::Base
     "http://chart.googleapis.com/chart?cht=qr&chs=#{size}&choe=UTF-8&chld=H&chl=#{short_url}"
   end
 
-  def set_googl_attributes
+  def set_googl_urls
     self.long_url = root_url + slug
     googl = Googl.shorten(long_url)
     if googl
       self.short_url = googl.short_url
-      self.info = googl.info
-      self.qr_code = googl.qr_code
+      self.googl_analytics_url = googl.info
+      self.qr_code_url = googl.qr_code
     end 
   end
 
-  # def address
+  # geocoded_by :address
+  # after_validation :geocode, if: :location_changed?
+
+  # def address_1
   #   [address, city, state, country].compact.join(', ')
   # end
 

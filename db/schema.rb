@@ -40,8 +40,8 @@ ActiveRecord::Schema.define(version: 20140531090327) do
     t.float    "longitude"
     t.string   "short_url"
     t.string   "long_url"
-    t.string   "qr_code"
-    t.string   "info"
+    t.string   "qr_code_url"
+    t.string   "googl_analytics_url"
   end
 
   create_table "pg_search_documents", force: true do |t|
