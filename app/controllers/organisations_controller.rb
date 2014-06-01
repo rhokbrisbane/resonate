@@ -1,4 +1,5 @@
 class OrganisationsController < ApplicationController
+  bafore_action :authenticate_user!, only: [:new, :create, :destroy, :edit]
   before_action :set_organisation, only: [:show, :edit, :update, :destroy]
 
   def org
