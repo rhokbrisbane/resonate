@@ -4,7 +4,6 @@ postgres:       &postgres
   host:         localhost
   min_messages: warning
   username:     netengine
-  password:     <%= ENV['PASSWORD'] %>
 
 development:
   <<: *postgres
@@ -13,7 +12,3 @@ development:
 test:
   <<: *postgres
   database:     resonate_test
-
-production:
-  <<: *postgres
-  database:     resonate_production

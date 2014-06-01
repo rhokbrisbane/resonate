@@ -33,7 +33,7 @@ class OrganisationsController < ApplicationController
   # POST /organisations
   # POST /organisations.json
   def create
-    @organisation = Organisation.new(organisation_params)
+    @organisation = Organisation.new(organisation_params.merge(root_url: root_url))
 
     respond_to do |format|
       if @organisation.save

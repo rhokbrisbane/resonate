@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140531074406) do
+ActiveRecord::Schema.define(version: 20140531090327) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,6 +38,10 @@ ActiveRecord::Schema.define(version: 20140531074406) do
     t.datetime "cover_photo_updated_at"
     t.float    "latitude"
     t.float    "longitude"
+    t.string   "short_url"
+    t.string   "long_url"
+    t.string   "qr_code_url"
+    t.string   "googl_analytics_url"
   end
 
   create_table "pg_search_documents", force: true do |t|

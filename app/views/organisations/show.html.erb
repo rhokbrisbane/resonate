@@ -39,6 +39,14 @@
     </dd>
   </dl>
 
+  <h3>QR and Short Link</h3>
+  <dl>
+    <dt>Short URL:</dt>
+    <dd><%= link_to "#{@organisation.short_url}", @organisation.short_url %></dd>
+    <dt>QR Code:</dt>
+    <dd><img src="<%= @organisation.qr_code_image_url %>"></dd>
+  </dl> 
+
   <%= link_to 'Back', organisations_path %>
 </div>
 
