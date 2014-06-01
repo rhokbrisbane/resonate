@@ -14,7 +14,7 @@ class OrganisationsController < ApplicationController
 
   # search with /organisations?q[name]=asdf
   def index
-    @organisations = Organisation.all # .paginate(page: params[:page])
+    @organisations = Organisation.paginate(page: params[:page])
   end
 
   # GET /organisations/1
