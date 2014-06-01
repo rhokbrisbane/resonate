@@ -1,7 +1,5 @@
 class CreateActiveAdminComments < ActiveRecord::Migration
   def self.up
-    add_column :users, :admin, :boolean, default: false
-
     create_table :active_admin_comments do |t|
       t.string :namespace
       t.text   :body
@@ -17,7 +15,5 @@ class CreateActiveAdminComments < ActiveRecord::Migration
 
   def self.down
     drop_table :active_admin_comments
-
-    remove_column :users, :admin, :boolean, default: false
   end
 end

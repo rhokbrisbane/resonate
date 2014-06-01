@@ -1,4 +1,5 @@
 Resonate::Application.routes.draw do
+  devise_for :users # , ActiveAdmin::Devise.config
   resources :search_results, only: :index
   resources :organisations
 
