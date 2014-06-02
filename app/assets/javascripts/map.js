@@ -1,5 +1,5 @@
 
-$(function() {
+var initMap = function initMap() {
   window.map = L.map('map', {
     scrollWheelZoom: false
   });
@@ -25,5 +25,8 @@ $(function() {
     map.addLayer(markers);
     map.fitBounds( markers.getBounds() );
   });
+}
 
+$(function() {
+  if ($('#map').length) { initMap(); }
 });

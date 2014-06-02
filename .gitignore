@@ -5,6 +5,3 @@
 .sass-cache
 config/database.yml
 public/system
-vendor/assets/bower_components
-vendor/assets/bower_components/*
-public/system/

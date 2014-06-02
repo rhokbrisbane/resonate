@@ -1,8 +1,0 @@
-{
-  "name": "Resonate Dependencies",
-  "dependencies": {
-    "terrain": "*",
-    "leaflet": "~0.7.3",
-    "leaflet-locatecontrol": "~0.27.0"
-  }
-}

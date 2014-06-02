@@ -1,0 +1,27 @@
+
+.clearfix {
+  zoom: 1;
+
+  &:before,
+  &:after {
+    content: "";
+    display: table;
+  }
+
+  &:after { clear: both; }
+}
+
+@mixin circle($size:$line-height) {
+  border-radius: 50%;
+  width: $size;
+  line-height: $size;
+  height: $size;
+  text-align: center;
+}
+
+@mixin animatableHide ($position: fixed) {
+  visibility: hidden;
+  position: $position;
+  left: -100%;
+  top: -100%;
+}
