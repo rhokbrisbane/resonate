@@ -1,0 +1,212 @@
+// # Settings
+
+// ## Typography
+
+$font-family:             'Source Sans Pro', 'Helvetica Neue', sans-serif !default;
+$font-family-body:        $font-family !default;
+$font-family-headings:    $font-family !default;
+$font-family-input:       $font-family !default;
+$font-family-icons:       'icons' !default;
+$font-family-mono:        'Menlo', 'Monaco', 'Courier New', monospace !default;
+
+$line-height:             1.7em !default;
+
+$font-size:               100% !default;
+
+$font-size-level-one:     3em !default;
+$font-weight-level-one:   300 !default;
+$line-height-level-one:   $line-height * 0.667;
+$margin-level-one:        $line-height * 0.667 !default;
+
+$font-size-level-two:     1.75em !default;
+$font-weight-level-two:   500 !default;
+$line-height-level-two:   $line-height * 0.75 !default;
+$margin-level-two:        $line-height * 0.75 !default;
+
+$font-size-level-three:   1.5em !default;
+$font-weight-level-three: 600 !default;
+$line-height-level-three: $line-height * 0.8 !default;
+$margin-level-three:      $line-height * 0.8 !default;
+
+$font-size-level-four:    1.25em !default;
+$font-weight-level-four:  700 !default;
+$line-height-level-four:  $line-height * 0.8 !default;
+$margin-level-four:       $line-height * 0.8 !default;
+
+$font-size-level-five:    1em !default;
+$font-weight-level-five:  700 !default;
+$line-height-level-five:  $line-height !default;
+$margin-level-five:       $line-height !default;
+
+$font-size-level-six:     0.8em !default;
+$font-weight-level-six:   700 !default;
+$line-height-level-six:   $line-height * 1.25;
+$margin-level-six:        $line-height * 1.25 !default;
+
+
+
+// ## Colours
+
+$color-primary:             hsl(204,44%,54%) !default;
+$color-primary-light:       lighten($color-primary, 30%) !default;
+$color-primary-dark:        darken($color-primary, 30%) !default;
+
+$black:                     hsl(0,0%,9%) !default;
+$white:                     lighten($black, 93.5%) !default;
+$gray-darker:               lighten($black, 13.5%) !default;
+$gray-dark:                 lighten($black, 20%) !default;
+$gray:                      lighten($black, 33.5%) !default;
+$gray-light:                lighten($black, 75%) !default;
+$gray-lighter:              lighten($black, 87.5%) !default;
+
+$color-success:             hsl(85, 60%, 52%) !default;
+$color-success-light:       lighten($color-success, 35%) !default;
+$color-warning:             hsl(45, 83%, 73%) !default;
+$color-warning-light:       lighten($color-warning, 35%) !default;
+$color-danger:              hsl(357, 88%, 63%) !default;
+$color-danger-light:        lighten($color-danger, 35%) !default;
+$color-info:                $color-primary !default;
+$color-info-light:          lighten($color-info, 35%) !default;
+
+$color-background-overlay:  rgba($black, 0.7) !default;
+
+$palette:
+  "white"         $white,
+  "black"         $black,
+  "primary"       $color-primary,
+  "primary-light" $color-primary-light,
+  "gray-darker"   $gray-darker,
+  "gray-dark"     $gray-dark,
+  "gray"          $gray,
+  "gray-light"    $gray-light,
+  "gray-lighter"  $gray-lighter,
+  "success"       $color-success,
+  "success-light" $color-success-light,
+  "warning"       $color-warning,
+  "warning-light" $color-warning-light,
+  "danger"        $color-danger,
+  "danger-light"  $color-danger-light,
+  "info"          $color-info,
+  "info-light"    $color-info-light !default;
+
+
+// Links
+
+$link-color:                    $color-primary !default;
+$link-color-hover:              $color-primary !default;
+$link-color-active:             $color-primary !default;
+$link-color-visited:            $color-primary !default;
+
+$main-link-color:               $link-color !default;
+$main-link-color-hover:         darken($link-color, 15%) !default;
+$main-link-color-active:        darken($link-color, 25%) !default;
+$main-link-color-visited:       lighten($link-color, 15%) !default;
+
+$footer-link-color:             $link-color !default;
+$footer-link-color-hover:       darken($link-color, 15%) !default;
+$footer-link-color-active:      darken($link-color, 25%) !default;
+$footer-link-color-visited:     lighten($link-color, 15%) !default;
+
+
+// Buttons
+
+$button-default-foreground-color:         $white !default;
+$button-default-background-color:         $gray-dark !default;
+$button-default-border-color:             $gray-darker !default;
+
+$button-default-hover-foreground-color:   $white !default;
+$button-default-hover-background-color:   $gray-dark !default;
+$button-default-hover-border-color:       $gray-darker !default;
+
+$button-default-active-foreground-color:  $white !default;
+$button-default-active-background-color:  $gray-dark !default;
+$button-default-active-border-color:      $gray-darker !default;
+
+$button-submit-foreground-color:          $white !default;
+$button-submit-background-color:          $color-primary !default;
+$button-submit-border-color:              $color-primary-dark !default;
+
+$button-danger-foreground-color:          $white !default;
+$button-danger-background-color:          $gray-dark !default;
+$button-danger-border-color:              $gray-darker !default;
+
+
+$button-submit-background-color:          $color-primary !default;
+$button-submit-foreground-color:          $white !default;
+$button-submit-border-color:              darken($color-primary, 5%) !default;
+
+$button-submit-hover-background-color:    darken($color-primary, 5%) !default;
+$button-submit-hover-foreground-color:    $white !default;
+$button-submit-hover-border-color:        darken($color-primary, 10%) !default;
+
+
+// Inputs
+
+$input-foreground-color:        $black !default;
+$input-background-color:        $white !default;
+$input-border-color:            $gray-light !default;
+
+$input-hover-foreground-color:  $color-info !default;
+$input-hover-background-color:  $color-info-light !default;
+$input-hover-border-color:      $color-info !default;
+
+$input-focus-foreground-color:  $black !default;
+$input-focus-background-color:  $white !default;
+$input-focus-border-color:      $color-success !default;
+
+
+// Selects
+
+$select-foreground-color:       $black !default;
+$select-background-color:       $gray-lighter !default;
+$select-border-color:           $gray-light !default;
+
+$select-hover-foreground-color: $color-info !default;
+$select-hover-background-color: $color-info-light !default;
+$select-hover-border-color:     $color-info !default;
+
+$select-focus-foreground-color: $color-success !default;
+$select-focus-background-color: $color-success-light !default;
+$select-focus-border-color:     $color-success !default;
+
+
+// Breakpoints
+
+$breakpoint-small:        32em !default;
+$breakpoint-medium:       48em !default;
+$breakpoint-large:        75em !default;
+
+
+// Layout
+
+$gutter:                  $line-height * 1.5 !default;
+$page-margin:             $line-height * 2 !default;
+$max-width:               $breakpoint-medium !default;
+$center-layout:           true !default;
+
+
+// Stroke widths
+
+$heavy-stroke:            $line-height / 4 !default;
+$medium-stroke:           $line-height / 8 !default;
+$light-stroke:            0.1em !default;
+
+$default-border-color:    $gray-light !default;
+$light-border-color:      $gray-lighter !default;
+
+
+// Debugging
+
+$baseline-grid: false !default;
+
+
+// Misc
+
+$radius: .15em !default;
+$border-width: .125em !default;
+
+// Tabs
+
+$tab-border-width: $border-width !default;
+$tab-nav-background-color: $gray !default;
+$tab-border-color: darken($tab-nav-background-color, 10%) !default;
